@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ee">
+    <meta name="description" content="A small, data-driven guide to affordable books, ratings, and genres.">
+    <title>Shelfwise — Find your next good read</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Shelfwise home">
+        <span class="wordmark-icon" aria-hidden="true">s</span>
+        shelfwise
+      </a>
+      <span class="header-note">Thoughtful reads, better prices</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE BOOK LIST</p>
+        <h1 id="page-title">A good book.<br><em>A gentler price.</em></h1>
+        <p class="intro-copy">Ten books, one quick comparison. Start with the five lowest prices, then set a rating floor to find a read that feels right.</p>
+      </section>
+
+      <section class="stats" aria-label="Book price and genre summary">
+        <article class="stat-card">
+          <span class="stat-label">Average price</span>
+          <strong id="average-price" class="stat-value">—</strong>
+          <span class="stat-caption">Across all 10 books</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Most expensive genre</span>
+          <strong id="expensive-genre" class="stat-value stat-value-genre">—</strong>
+          <span id="expensive-genre-caption" class="stat-caption">By average listed price</span>
+        </article>
+        <article class="stat-card stat-card-accent">
+          <span class="stat-label">Books compared</span>
+          <strong id="book-count" class="stat-value">10</strong>
+          <span class="stat-caption">A small shelf, sorted by price</span>
+        </article>
+      </section>
+
+      <section class="book-section" aria-labelledby="book-list-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> THE SHORTLIST</p>
+            <h2 id="book-list-title">The five best-value books</h2>
+            <p id="results-summary" class="results-summary" aria-live="polite"></p>
+          </div>
+          <div class="rating-filter">
+            <label for="rating-filter">Minimum Goodreads rating</label>
+            <div class="range-row">
+              <input id="rating-filter" type="range" min="0" max="5" step="0.1" value="0">
+              <output id="rating-value" for="rating-filter">Any</output>
+            </div>
+            <div class="range-ends" aria-hidden="true"><span>Any</span><span>5 stars</span></div>
+          </div>
+        </div>
+
+        <div id="book-list" class="book-list"></div>
+        <p id="empty-state" class="empty-state" hidden>No books meet that rating yet. Try lowering the minimum.</p>
+      </section>
+
+      <aside class="method-note" aria-label="Data and methodology">
+        <span class="method-mark" aria-hidden="true">i</span>
+        <p>
+          Sample snapshot collected November 16, 2026. Listed prices are Bookshop.org sale prices in USD; ratings are approximate weighted averages calculated from the visible Goodreads star-count breakdowns. Genre labels use Goodreads’ primary genre where available. Average price and highest-average genre use all 10 books; the shortlist and rating filter use the same sample.
+        </p>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Shelfwise</span>
+      <span>Prices and community ratings can change.</span>
+    </footer>
+  </body>
+</html>
